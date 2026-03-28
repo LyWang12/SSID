@@ -20,26 +20,6 @@ from lr_scheduler import LrScheduler
 from data_list_index import ImageList
 from Loss import *
 
-import torch
-
-# 1. 强制让 is_available 返回 False，这样代码内部的逻辑会倾向于走 CPU 分支
-torch.cuda.is_available = lambda: False
-
-# 2. 核心黑魔法：拦截所有的 .cuda() 调用，让它直接返回自身（即留在 CPU 上）
-# 这样即使代码里写了 tensor.cuda() 或 model.cuda()，也不会报错
-torch.Tensor.cuda = lambda self, *args, **kwargs: self
-torch.nn.Module.cuda = lambda self, *args, **kwargs: self
-
-# 3. 拦截 torch.load，强制加上 map_location='cpu'
-original_load = torch.load
-def patched_load(*args, **kwargs):
-    kwargs['map_location'] = torch.device('cpu')
-    return original_load(*args, **kwargs)
-torch.load = patched_load
-
-print("⚠️ 已启动 CPU 兼容模式：所有的 .cuda() 调用将被忽略，模型将强制在 CPU 运行。")
-
-
 def get_current_time():
     time_stamp = time.time()
     local_time = time.localtime(time_stamp)
