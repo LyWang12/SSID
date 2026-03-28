@@ -4,7 +4,7 @@ Code release for "Unsupervised Domain Adaptation via Style-Aware Self-intermedia
 
 ## Paper
 
-<div align=center><img src="https://github.com/LyWang12/SSID/blob/main/Fig/fig_ssid.pdf" width="100%"></div>
+<div align=center><img src="https://github.com/LyWang12/SSID/blob/main/Fig/fig_ssid.png" width="100%"></div>
 
 [Unsupervised Domain Adaptation via Style-Aware Self-intermediate Domain](https://www.sciencedirect.com/science/article/pii/S0031320325010052) 
 (Pattern Recognization)
@@ -22,7 +22,7 @@ Office-Home dataset can be found [here](http://hemanthdv.org/OfficeHome-Dataset/
 
 VisDA 2017 dataset can be found [here](https://github.com/VisionLearningGroup/taskcv-2017-public).
 
-<div align=center><img src="https://github.com/LyWang12/SSID/blob/main/Fig/fig_exp.pdf" width="100%"></div>
+<div align=center><img src="https://github.com/LyWang12/SSID/blob/main/Fig/fig_exp.png" width="100%"></div>
 
 
 ## Running the code
